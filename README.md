@@ -15,3 +15,4 @@ And if it is a server script, Should it be more than 1 file?
 
 You can find to client script version in clientscript.js
 The client script version is not that advanced yet
+Client Script Version moved to the repo called Client-Scripts
