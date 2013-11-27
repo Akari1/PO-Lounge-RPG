@@ -22,7 +22,7 @@ function mobStats(HP, STR, MGC, LVL, XPR, DVP, OFA, mobName) {
     this.STR = STR;
     this.MGC = MGC;
     this.LVL = LVL;
-    this XPR = XPR;
+    this.XPR = XPR;
     this.DVP = DVP;
     this.OFA = OFA;
     this.mobName = mobName;
@@ -68,7 +68,7 @@ function mobStats(HP, STR, MGC, LVL, XPR, DVP, OFA, mobName) {
     }
 }
 // This sets up an object constructor, with properties as mob stats, and methods to change those stats. Hooray. 
-var Player = new mobStats(10, 1, 1, 1, 0, 0, 0, "None");
+var player = new mobStats(10, 1, 1, 1, 0, 0, 0, "None");
 var mob1 = new mobStats(0, 0, 0, 0, 0, 0, 0, "None");
 // var mob2 = new mobStats ( 0, 0, 0, 0, 0, 0, 0, "None");
 // These set up the player, and also empty mob stats slots which will be used in battle.
