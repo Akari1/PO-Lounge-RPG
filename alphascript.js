@@ -78,7 +78,10 @@ var Bat = new mobStats(11, 7, 4, 3, 4, 2, 1, "Bat");
 var Bug = new mobStats(7, 2, 8, 3, 4, 3, 1, "Bug");
 var Pixie = new mobStats(9, 0, 14, 5, 10, 4, .2, "Pixie");
 var Troll = new mobStats(15, 10, 0, 5, 10, 5, .2, "Troll");
-var Dwarf = new mobStats(8, 3, 2, 5, 6, 4, .2, "Dwarf")
+//Akari did Dwarf
+var Dwarf = new mobStats(8, 3, 2, 5, 6, 4, .2, "Dwarf");
+//Re4per did Magiccat
+var Magicat = new mobStats (5, 1, 4, 1, 3, 0, 3, "Magicat");
 // These set up all the mobs, which will be copied into the mob1 and mob2 objects to be used during battle. Oh what fun. The mob's XPR stat is the amount of experience gained, upon their defeat. Their DVP stat is their ID, and their OFA is the chance they'll appear in battle.
 var FuncMove = function (directionParameter) {
     // outputLocation is a nested function. BIRD!
