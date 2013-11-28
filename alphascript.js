@@ -53,7 +53,7 @@ function mobStats ( HP, STR, MGC, LVL, XPR, DVP, OFA, mobName) {
          this.mobName = newValue;
      }
 }
-// This sets up an object constructor, with properties as mob stats, and methods to change those stats. Hooray.
+// This sets up an object constructor, with properties as mob stats, and methods to change those stats. Hooray. 
 var player = new mobStats( 10, 1, 1, 1, 0, 0, 0, "None");
 var mob1 = new mobStats ( 0, 0, 0, 0, 0, 0, 0, "None");
 // var mob2 = new mobStats ( 0, 0, 0, 0, 0, 0, 0, "None");
@@ -78,7 +78,7 @@ var FuncMove = function( directionParameter) {
                 console.log("You are in a cave.");
             }
         }
-    }
+    };
 // This ends the nested function.
     var direction = directionParameter;
     var a = 0;
@@ -89,7 +89,7 @@ var FuncMove = function( directionParameter) {
                 console.log("A wall blocks your path.");
             }else{
                 console.log("You moved north.");
-                xm = a
+                xm = a;
                 outputLocation();
             }
             break;
@@ -99,7 +99,7 @@ var FuncMove = function( directionParameter) {
                 console.log("A wall blocks your path.");
             }else{
                 console.log("You moved south.");
-                xm = a
+                xm = a;
                 outputLocation();
             }
             break;
@@ -109,7 +109,7 @@ var FuncMove = function( directionParameter) {
                 console.log("A wall blocks your path.");
             }else{
                 console.log("You moved east.");
-                ym = a
+                ym = a;
                 outputLocation();
             }
             break;
@@ -119,28 +119,32 @@ var FuncMove = function( directionParameter) {
                 console.log("A wall blocks your path.");
             }else{
                 console.log("You moved west.");
-                ym = a
+                ym = a;
                 outputLocation();
             }
             break;
          default: console.log("You didn't move anywhere.");
      }
-}
+};
 // FuncMove's function now allows us to fully move across the map, and to also display where we are on the map. It's like Dora the Explorer, but for bigger kids.
 var FuncFight = function() {
     var RandomValues = function() {
         randomVar = Math.random();
-    }
+    };
     // Let's break this entire function down into some steps. Because if you try and step over a staircase with one bound, you're gonna break your back. Step 1: fill in the mob1 and mob2 object variables, these will be used in combat. Step 2: Include the actual battle engine, where the actual combat takes place. Step 3: Anything that should happen after the battle goes here. For now, we're only doing one mob per battle.
 var AssignMobs = function() {
 mob1 = Chicken;
-}
+};
            if ( mob1.HP === 0) {
                AssignMobs();
            }
    console.log("You encountered an " + mob1.mobName + "!");
    var inBattle = true;
    while (inBattle) {
+   //new change here
+       console.log("Your HP: " + player.HP);
+       console.log(mob1.mobName + "'s HP: " + mob1.HP);
+   //end new change
        var playerAction = prompt("Battle with /sword or /spell !");
        var r = Math.floor( Math.random() *2 +1);
        var mobAttack = Math.floor( Math.random() *2 +1);
@@ -150,20 +154,20 @@ mob1 = Chicken;
                var fract = num / dem / 1;
                mob1.HP -= Math.ceil(fract);
            }else if ( playerAction === "/spell") {
-               var num = 10 * r * player.LVL * player.MGC;
-               var dem = (5 * mob1.MGC + 2 * mob1.STR) * mob1.LVL;
-               var fract = num / dem / 1;
+               num = 10 * r * player.LVL * player.MGC;
+               dem = (5 * mob1.MGC + 2 * mob1.STR) * mob1.LVL;
+               fract = num / dem / 1;
                mob1.HP -= Math.ceil(fract);
            }
            if ( mobAttack ===1) {
-               var num = 10 * r * mob1.LVL * mob1.STR;
-               var dem = (5 * player.STR + 2 * player.MGC) * player.LVL;
-               var fract = num / dem / 1;
+               num = 10 * r * mob1.LVL * mob1.STR;
+               dem = (5 * player.STR + 2 * player.MGC) * player.LVL;
+               fract = num / dem / 1;
                player.HP -= Math.ceil(fract);
            }else if ( mobAttack === 2) {
-               var num = 10 * r * mob1.LVL * mob1.MGC;
-               var dem = (5 * player.MGC + 2 * player.STR) * player.LVL;
-               var fract = num / dem / 1;
+               num = 10 * r * mob1.LVL * mob1.MGC;
+               dem = (5 * player.MGC + 2 * player.STR) * player.LVL;
+               fract = num / dem / 1;
                player.HP -= Math.ceil(fract);
            }
            if ( mob1.HP <= 0) {
@@ -175,7 +179,7 @@ mob1 = Chicken;
            }
            player.HP += 1;
        }
-}
+};
 // This ends the entire battle engine. This will be upgraded.
 var PlayingRPG = true;
 while ( PlayingRPG ) {
